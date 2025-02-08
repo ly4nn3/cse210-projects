@@ -1,6 +1,6 @@
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string activityName)
+    public BreathingActivity()
         : base("Breathing",
             "This activity will help you relax by walking you through breathing in and out slowly.\nClear your mind and focus on your breathing",
             0)
@@ -16,9 +16,10 @@ public class BreathingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine("Breathe in...");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\nBreathe in...");
             ShowCountDown(4);
-            Console.WriteLine("Breathe out...");
+            Console.WriteLine("And breathe out...");
             ShowCountDown(4);
         }
 
