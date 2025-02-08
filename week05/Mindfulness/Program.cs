@@ -1,3 +1,6 @@
+// - Added foreground color to console text for some fun visual variation
+// - Added method in ReflectionActivity.cs to make sure no questions are repeated when getting a new random question
+
 using System;
 using System.Linq.Expressions;
 
