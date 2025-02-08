@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 public class Activity
 {
     private string _activityName;
@@ -34,28 +36,32 @@ public class Activity
     public void DisplayStartMessage()
     {
         Console.Clear();
-        Console.WriteLine($"Welcome to the ${_activityName} Activity.");
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine($"Welcome to the {_activityName} Activity.");
         Console.WriteLine(_description);
+
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine($"\nHow long, in seconds, would you like this session to be? ");
         int duration = int.Parse(Console.ReadLine());
         SetDuration(duration);
 
         Console.Clear();
         Console.WriteLine("Get ready...");
-        ShowSpinner(3);
+        ShowSpinner(5);
     }
 
     public void DisplayEndMessage()
     {
+        Console.ForegroundColor= ConsoleColor.Green;
         Console.WriteLine("\nWell done!");
         ShowSpinner(3);
         Console.WriteLine($"\nYou have completed another {_duration} seconds of the {_activityName} Activity.");
-        ShowSpinner(3);
+        ShowSpinner(10);
     }
 
     public void ShowSpinner(int seconds)
     {
-        List<string> spinnerStrings = new List<string> { "|", "/", "—", "\\"};
+        List<string> spinnerStrings = new List<string> { "|", "/", "—", "\\" };
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds);
 
@@ -63,7 +69,7 @@ public class Activity
         while (DateTime.Now < endTime)
         {
             Console.Write(spinnerStrings[i]);
-            Thread.Sleep(250);
+            Thread.Sleep(750);
             Console.Write("\b \b");
             i++;
             if (i >= spinnerStrings.Count)
