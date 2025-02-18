@@ -1,0 +1,4 @@
+370
+SimpleGoal|homework|finish cse210 project|50|True
+EternalGoal|yoga|weekly yoga, or twice a week|100
+ChecklistGoal|Class sceduling|Weekly schedule planning for 7 weeks|10|3|20|3
